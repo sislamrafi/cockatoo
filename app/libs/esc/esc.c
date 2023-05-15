@@ -5,21 +5,14 @@
 
 #include "esc.h"
 
-// write your functions here
-
-//TIM1_CH1N = {PA7,PB13,}
-//TIM1_CH2N = {PB0,PB14,}
-//TIM1_CH3N = {PB1,PB15,}
-
-//TIM1_CH1 = {PA8, ,}
-//TIM1_CH2 = {PA9, ,}
-//TIM1_CH3 = {PA10,,}
-//TIM1_CH4 = {PA11,,}
-
-//TIM2_CH1 = {PA0,PA5,PB8,PB13}
-//TIM2_CH2 = {PA1,PB2,PB9,PB14}
-//TIM2_CH3 = {PA2,PB10,PB15}
-//TIM2_CH4 = {PA3,PB2,PB11}
+/**
+    @brief
+    Select pin combinations from bellow
+    TIM2_CH1 = {PA0,PA5,PB8,PB13}
+    TIM2_CH2 = {PA1,PB2,PB9,PB14}
+    TIM2_CH3 = {PA2,PB10,PB15}
+    TIM2_CH4 = {PA3,PB2,PB11}
+**/
 
 void ESC_ConfigWithTimer2(void) {
 
@@ -28,11 +21,13 @@ void ESC_ConfigWithTimer2(void) {
     ConfigTimer2ForSystem();
   }
 
-  //following are configured in timer.h
-  //RCC->APB2ENR |= (1 << 0);
-  //TIM2->PSC = 90 - 1;
-  //TIM2->ARR = 100;
-  //TIM2->CR1 |= (1 << 0); // enable counter
+    /**
+        following are configured in timer.h
+        RCC->APB2ENR |= (1 << 0);
+        TIM2->PSC = 90 - 1;
+        TIM2->ARR = 100;
+        TIM2->CR1 |= (1 << 0); // enable counter
+    **/
 
   TIM2->CCR1 = 0;
   TIM2->EGR |= (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4); // enable capture compare generation for channel 1,2,3,4
