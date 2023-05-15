@@ -13,6 +13,10 @@
         "app/libs/timer/timer.c",
         "app/libs/rcc/rcc.c",
         "app/libs/debug/debug.c",
-        "app/libs/esc/esc.c"
+        "app/libs/esc/esc.c",
+        "app/libs/i2c/i2c.c",
+        "app/libs/usart/usart.c",
+        "app/libs/mpu6050/mpu6050.c",
+        "app/main/kalman.c"
     ]
 }

@@ -8,5 +8,7 @@
 #include "../libs/debug/debug.h"
 #include "../libs/esc/esc.h"
 #include <stdint.h>
+#include "../libs/mpu6050/mpu6050.h"
+#include "../libs/usart/usart.h"
 
 #endif
